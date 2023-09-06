@@ -93,3 +93,48 @@ for (let i = 0; i < ourTeam.length; i++) {
     }
 
 }
+
+document.getElementById('addMember').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const nameAddDOM = document.getElementById('nameComplete').value;
+
+    const roleAddDOM = document.getElementById('role').value;
+
+    const imageAddDOM = `https://picsum.photos/400/275`;
+
+    //console.log(nameAddDOM,roleAddDOM,imageAddDOM);
+
+    const memberNew = {
+
+        name: nameAddDOM,
+        position: roleAddDOM,
+        profileImg: imageAddDOM,
+    }
+
+    //console.log(memberNew);
+
+    ourTeam.push(memberNew);
+    console.log(ourTeam);
+
+    addMember(nameAddDOM,roleAddDOM,imageAddDOM);
+});
+
+function addMember(name, position, profilePicture) {
+
+    const teamComponentDOM = document.querySelector('.row');
+
+    const teamComponentMarkup = `<div class="col-4">
+    <div class="card my-3">
+        <div class="card-img">
+            <img class="img-fluid" src="${profilePicture}" alt>
+        </div>
+        <div class="card-body">
+            <h4>Nome: ${name}</h4>
+            <h5>Ruolo: ${position}</h5>
+        </div>
+    </div>
+</div>`
+
+    teamComponentDOM.insertAdjacentHTML('beforeend', teamComponentMarkup);
+}
