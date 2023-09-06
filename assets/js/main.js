@@ -41,15 +41,9 @@ const ourTeam = [
 
 ]
 
-for (const key in ourTeam) {
+/* MILESTONE 1:
+Stampare su console, per ogni membro del team, le informazioni di nome, ruolo e la stringa della foto */
 
-    //const element = ourTeam[key];
-
-    console.log(key);
-
-        
-    
-}
 
 for (let i = 0; i < ourTeam.length; i++) {
     
@@ -63,4 +57,3 @@ for (let i = 0; i < ourTeam.length; i++) {
     }
     
 }
-
