@@ -71,10 +71,16 @@ for (let i = 0; i < ourTeam.length; i++) {
 
     const teamComponent = ourTeam[i];
 
-    const teamComponentMarkup = `<div>
-    <h4>Nome: ${teamComponent.name}</h4>
-    <h3>Ruolo: ${teamComponent.position}</h3>
-    <img src="${teamComponent.profileImg}" alt="">
+    const teamComponentMarkup = `<div class="col-4">
+    <div class="card my-3">
+        <div class="card-img">
+            <img class="img-fluid" src="${teamComponent.profileImg}" alt>
+        </div>
+        <div class="card-body">
+            <h4>Nome: ${teamComponent.name}</h4>
+            <h5>Ruolo: ${teamComponent.position}</h5>
+        </div>
+    </div>
 </div>`
 
     teamComponentDOM.insertAdjacentHTML('beforeend', teamComponentMarkup);
